@@ -21,6 +21,9 @@ function App() {
 
       <Button>Primary button</Button>
       <Button secondary>Secondary button</Button>
+
+      <Button disabled>Disabled button</Button>
+      <Button large>Large button</Button>
     </div>
   );
 }
