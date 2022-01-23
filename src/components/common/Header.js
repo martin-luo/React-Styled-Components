@@ -10,7 +10,11 @@ const HeaderWrapper = styled.header`
   padding: 0 16px;
   position: fixed;
   top: 0;
-  background-image: linear-gradient(to right, #f8049c, #fdd54f);
+  background-image: linear-gradient(
+    to right,
+    ${({ theme }) => theme.primaryColor},
+    ${({ theme }) => theme.secondaryColor}
+  );
   border-bottom: 3px solid #fdd54f;
 `;
 
@@ -23,7 +27,7 @@ const Menu = styled.nav`
   left: 0;
   padding: 8px;
   box-sizing: border-box;
-  border-bottom: 3px solid #fdd54f;
+  border-bottom: 3px solid ${({ theme }) => theme.secondaryColor};
   background: white;
 
   @media (min-width: 768px) {

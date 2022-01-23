@@ -2,7 +2,8 @@ import styled, { css } from "styled-components";
 
 export const Button = styled.button`
   color: white;
-  background: ${(p) => (p.secondary ? "#fdd54f" : "#f8049c")};
+  background: ${({ secondary, theme }) =>
+    secondary ? theme.secondaryColor : theme.primaryColor};
   font-weight: bold;
 
   ${(p) =>
