@@ -1,5 +1,5 @@
 import React from "react";
-import { Link as ReactRouterDomLink } from "react-router-dom";
+import { Link as ReactRouterDomLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 const HeaderWrapper = styled.header`
@@ -41,11 +41,15 @@ const StyledLink = styled(Link)`
 `;
 
 export const Header = () => {
+  const { pathname } = useLocation();
+
   return (
     <HeaderWrapper>
       <Menu>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/login" isActive>
+        <StyledLink to="/" isActive={pathname === "/"}>
+          Home
+        </StyledLink>
+        <StyledLink to="/login" isActive={pathname === "/login"}>
           Login
         </StyledLink>
       </Menu>
